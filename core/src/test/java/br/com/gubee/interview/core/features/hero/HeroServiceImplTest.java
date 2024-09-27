@@ -7,20 +7,14 @@ import br.com.gubee.interview.model.PowerStats;
 import br.com.gubee.interview.model.dtos.HeroDtoRequest;
 import br.com.gubee.interview.model.dtos.HeroDtoResponse;
 import br.com.gubee.interview.model.enums.Race;
-import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 public class HeroServiceImplTest {
@@ -90,6 +84,8 @@ public class HeroServiceImplTest {
         assertEquals(50, hero.getPowerStats().getDexterity());
         assertEquals(50, hero.getPowerStats().getIntelligence());
     }
+
+
 
     @Test
     public void shouldReturnHeroDtoResponseWhenFindByName() {

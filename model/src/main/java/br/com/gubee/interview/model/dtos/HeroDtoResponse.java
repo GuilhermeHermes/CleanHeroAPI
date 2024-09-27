@@ -59,4 +59,14 @@ public class HeroDtoResponse {
     public void setPowerStats(PowerStats powerStats) {
         this.powerStats = powerStats;
     }
+
+    @Override
+    public String toString() {
+        return "HeroDtoResponse{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", race=" + race +
+                ", powerStats=" + powerStats +
+                '}';
+    }
 }

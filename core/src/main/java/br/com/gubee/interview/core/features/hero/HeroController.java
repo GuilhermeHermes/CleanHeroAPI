@@ -62,8 +62,8 @@ public class HeroController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<HeroDtoResponse> update(@PathVariable String id, @RequestBody @Valid HeroDtoRequest hero) {
+    @PutMapping
+    public ResponseEntity<HeroDtoResponse> update( @RequestBody @Valid HeroDtoRequest hero) {
         HeroDtoResponse updatedHero = heroService.update(hero);
         return ResponseEntity.ok().body(updatedHero);
     }
@@ -74,10 +74,5 @@ public class HeroController {
         return ResponseEntity.ok().body(result);
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public final Exception handleAllExceptions(RuntimeException e) {
-        return e;
-    }
 
 }

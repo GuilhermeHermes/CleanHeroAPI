@@ -1,6 +1,6 @@
 package br.com.gubee.interview.core.features.hero;
 
-import br.com.gubee.interview.core.configuration.exception.ObjectNotFoundException;
+import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
 import br.com.gubee.interview.core.utils.HeroMapper;
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
@@ -44,9 +44,11 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public HeroDtoResponse findById(String id) {
-        Hero hero = heroRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Hero not found"));
-        return heroMapper.mapToDtoResponse(hero);
-
+        Optional<Hero> hero = heroRepository.findById(id);
+        if (hero.isEmpty()) {
+            throw new ObjectNotFoundException(id);
+        }
+        return heroMapper.mapToDtoResponse(hero.get());
     }
 
     @Override
@@ -71,12 +73,10 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public HeroDtoResponse update(HeroDtoRequest heroDtoRequest) {
-        HeroDtoResponse heroResponse = heroMapper.mapToDtoResponse(heroRepository.save(heroMapper.mapToHero(heroDtoRequest)));
-        if(heroResponse == null){
-            throw new ObjectNotFoundException("Hero not found");
-        } else {
-            return heroResponse;
-        }
+        Hero hero = heroRepository.findById(heroDtoRequest.getId())
+                .orElseThrow(() -> new ObjectNotFoundException(heroDtoRequest.getId()));
+        heroMapper.updateHero(hero, heroDtoRequest);
+        return heroMapper.mapToDtoResponse(heroRepository.save(hero));
     }
 
     @Override

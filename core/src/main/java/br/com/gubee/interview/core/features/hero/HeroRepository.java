@@ -19,7 +19,6 @@ public interface HeroRepository extends MongoRepository<Hero, String> {
 
     List<Hero> findAllByIdIn(List<String> ids);
 
-    Optional<Hero> findById(String id);
 
     void deleteById(String id);
 

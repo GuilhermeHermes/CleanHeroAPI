@@ -1,15 +1,13 @@
 package br.com.gubee.interview.core.features.hero.utils;
 
 import br.com.gubee.interview.core.features.hero.HeroService;
-import br.com.gubee.interview.core.configuration.exception.ObjectNotFoundException;
+import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
 import br.com.gubee.interview.core.utils.HeroMapper;
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
 import br.com.gubee.interview.model.dtos.HeroDtoRequest;
 import br.com.gubee.interview.model.dtos.HeroDtoResponse;
 import br.com.gubee.interview.model.enums.Race;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +16,6 @@ import java.util.stream.Collectors;
 
 public class HeroServiceStub implements HeroService {
 
-    HeroMapper heroMapper;
 
     private final Map<String, HeroDtoResponse> heroes = new HashMap<>();
 
@@ -90,7 +87,9 @@ public class HeroServiceStub implements HeroService {
 
     @Override
     public HeroDtoResponse update(HeroDtoRequest heroDtoRequest) {
-        return null;
+        HeroMapper heroMapper;
+        HeroDtoResponse savedHero = HeroMapper.mapToDtoResponse(heroDtoRequest);
+        return savedHero;
     }
 
     @Override

@@ -3,6 +3,7 @@ package br.com.gubee.interview.model.dtos;
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
 import br.com.gubee.interview.model.enums.Race;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +23,7 @@ public class HeroDtoRequest {
     private Race race;
 
     @NotNull(message = "message.enabled.mandatory")
+    @JsonProperty("power_stats")
     @Valid
     private PowerStats powerStats;
 
@@ -35,6 +37,14 @@ public class HeroDtoRequest {
         this.race = race;
         this.powerStats = powerStats;
         this.enabled = enabled;
+    }
+
+    public String getId(){
+        return id;
+    }
+
+    public void setId(String id){
+        this.id = id;
     }
 
     public @NotBlank(message = "message.name.mandatory") @Length(min = 1, max = 255, message = "message.name.length.min.1.max.255") String getName() {
@@ -70,4 +80,14 @@ public class HeroDtoRequest {
         this.enabled = enabled;
     }
 
+    @Override
+    public String toString() {
+        return "HeroDtoRequest{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", race=" + race +
+                ", powerStats=" + powerStats +
+                ", enabled=" + enabled +
+                '}';
+    }
 }

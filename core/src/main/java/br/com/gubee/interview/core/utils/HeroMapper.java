@@ -25,7 +25,7 @@ public class HeroMapper {
         return mapper.map(response, HeroDtoRequest.class);
     }
 
-    public HeroDtoResponse mapToDtoResponse(HeroDtoRequest request) {
+    public static HeroDtoResponse mapToDtoResponse(HeroDtoRequest request) {
         return mapper.map(request, HeroDtoResponse.class);
     }
 
@@ -51,6 +51,14 @@ public class HeroMapper {
         return heroes.stream()
                 .map(this::mapToDtoRequest)
                 .collect(Collectors.toList());
+    }
+
+    public Hero updateHero(Hero hero, HeroDtoRequest request) {
+        hero.setName(request.getName());
+        hero.setRace(request.getRace());
+        hero.setPowerStats(request.getPowerStats());
+        hero.setEnabled(request.isEnabled());
+        return hero;
     }
 
 }

@@ -1,13 +1,10 @@
 package br.com.gubee.interview.core.features.hero;
 
 
-import br.com.gubee.interview.core.configuration.exception.ResourceExceptionHandler;
 import br.com.gubee.interview.core.features.hero.utils.HeroServiceStub;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -15,10 +12,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+
 @AutoConfigureMockMvc
 public class HeroControllerTest {
 
@@ -69,6 +65,22 @@ public class HeroControllerTest {
                 .andExpect(jsonPath("$.powerStats.intelligence").value(80));
     }
 
+//    @Test
+//    public void testFindById_ThrowsException() throws Exception {
+//        mockMvc.perform(get("/api/v1/heroes/1334asbd1234")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isNotFound())  // Verifica se o status é 200 OK
+//                .andExpect(jsonPath("$.id").value("1"))
+//                .andExpect(jsonPath("$.name").value("Hero One"))
+//                .andExpect(jsonPath("$.race").value("HUMAN"))
+//                .andExpect(jsonPath("$.powerStats.strength").value(50))
+//                .andExpect(jsonPath("$.powerStats.agility").value(60))
+//                .andExpect(jsonPath("$.powerStats.dexterity").value(70))
+//                .andExpect(jsonPath("$.powerStats.intelligence").value(80));
+//    }
+
+
+
     @Test
     public void testFindByName_Success() throws Exception {
         mockMvc.perform(get("/api/v1/heroes/name/hero")
@@ -93,36 +105,38 @@ public class HeroControllerTest {
     }
 
 
-//    @Test
-//    public void shouldReturnUpdatedHero() throws Exception {
-//
-//        String heroJson = """
-//    {
-//        "name": "Hero One",
-//        "race": "HUMAN",
-//        "powerStats": {
-//            "strength": 50,
-//            "agility": 99,
-//            "dexterity": 90,
-//            "intelligence": 80
-//        },
-//        "enabled": true
-//    }
-//    """;
-//
-//
-//        mockMvc.perform(put("/api/v1/heroes/1")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(heroJson))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.id").value("1"))
-//                .andExpect(jsonPath("$.name").value("Hero One"))
-//                .andExpect(jsonPath("$.race").value("HUMAN"))
-//                .andExpect(jsonPath("$.powerStats.strength").value(50))
-//                .andExpect(jsonPath("$.powerStats.agility").value(99))
-//                .andExpect(jsonPath("$.powerStats.dexterity").value(90))
-//                .andExpect(jsonPath("$.powerStats.intelligence").value(80));
-//    }
+    @Test
+    public void shouldReturnUpdatedHero() throws Exception {
+        String heroJson = """
+                {
+                    "id": "1",
+                    "name": "Hero One",
+                    "race": "HUMAN",
+                    "power_stats": {
+                        "strength": 50,
+                        "agility": 99,
+                        "dexterity": 90,
+                        "intelligence": 80
+                    },
+                    "enabled": true
+                }
+                """;
+
+        mockMvc.perform(put("/api/v1/heroes")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(heroJson))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id").value("1"))
+                .andExpect(jsonPath("$.name").value("Hero One"))
+                .andExpect(jsonPath("$.race").value("HUMAN"))
+                .andExpect(jsonPath("$.powerStats.strength").value(50))
+                .andExpect(jsonPath("$.powerStats.agility").value(99))
+                .andExpect(jsonPath("$.powerStats.dexterity").value(90))
+                .andExpect(jsonPath("$.powerStats.intelligence").value(80));
+
+    }
+
 
 
 
