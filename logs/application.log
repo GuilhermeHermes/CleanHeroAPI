@@ -462,3 +462,4 @@
 [32m[INFO ][m [35m[2024-09-27T12:12:58,642] [http-nio-8080-exec-2] [[/]][m Initializing Spring DispatcherServlet 'dispatcherServlet' 
 [32m[INFO ][m [35m[2024-09-27T12:12:58,642] [http-nio-8080-exec-2] [DispatcherServlet][m Initializing Servlet 'dispatcherServlet' 
 [32m[INFO ][m [35m[2024-09-27T12:12:58,643] [http-nio-8080-exec-2] [DispatcherServlet][m Completed initialization in 1 ms 
+[32m[INFO ][m [35m[2024-09-27T12:14:00,636] [http-nio-8080-exec-8] [AbstractOpenApiResource][m Init duration for springdoc-openapi is: 252 ms 
