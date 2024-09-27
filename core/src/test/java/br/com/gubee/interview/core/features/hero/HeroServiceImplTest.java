@@ -1,6 +1,7 @@
 package br.com.gubee.interview.core.features.hero;
 
 
+import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
 import br.com.gubee.interview.core.utils.HeroMapper;
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
@@ -48,25 +49,6 @@ public class HeroServiceImplTest {
 
 
     @Test
-    public void testCompareHeroes() {
-        List<Hero> heroes = createListHeroes();
-
-        when(heroRepository.findById("1")).thenReturn(Optional.ofNullable(heroes.get(0)));
-        when(heroRepository.findById("2")).thenReturn(Optional.ofNullable(heroes.get(1)));
-        when(heroMapper.mapToDtoResponse(heroes.get(0))).thenReturn(new HeroDtoResponse(heroes.get(0).getId().toString(), heroes.get(0).getName(), heroes.get(0).getRace(), heroes.get(0).getPowerStats()));
-        when(heroMapper.mapToDtoResponse(heroes.get(1))).thenReturn(new HeroDtoResponse(heroes.get(1).getId().toString(), heroes.get(1).getName(), heroes.get(1).getRace(), heroes.get(1).getPowerStats()));
-
-
-        Map<String, Object> result = heroService.compare("1", "2");
-        assertEquals("1", result.get("id1"));
-        assertEquals("2", result.get("id2"));
-        assertEquals(50, result.get("strengthDiff"));
-        assertEquals(50, result.get("agilityDiff"));
-        assertEquals(-50, result.get("dexterityDiff"));
-        assertEquals(-50, result.get("intelligenceDiff"));
-    }
-
-    @Test
     public void shouldReturnHeroDtoResponseWhenFindById() {
         List<Hero> heroes = createListHeroes();
 
@@ -85,6 +67,11 @@ public class HeroServiceImplTest {
         assertEquals(50, hero.getPowerStats().getIntelligence());
     }
 
+    @Test
+    public void shouldReturnObjectNotFoundWhenFindByIdDontMatch() {
+        when(heroRepository.findById("1")).thenReturn(Optional.empty());
+        assertThrows(ObjectNotFoundException.class, () -> heroService.findById("1"));
+    }
 
 
     @Test
@@ -128,7 +115,64 @@ public class HeroServiceImplTest {
         assertEquals(expectedResponse.getPowerStats(), heroResponse.getPowerStats());
     }
 
-    public List<Hero> createListHeroes(){
+    @Test
+    public void testCompareHeroes() {
+        List<Hero> heroes = createListHeroes();
+
+        when(heroRepository.findById("1")).thenReturn(Optional.ofNullable(heroes.get(0)));
+        when(heroRepository.findById("2")).thenReturn(Optional.ofNullable(heroes.get(1)));
+        when(heroMapper.mapToDtoResponse(heroes.get(0))).thenReturn(new HeroDtoResponse(heroes.get(0).getId().toString(), heroes.get(0).getName(), heroes.get(0).getRace(), heroes.get(0).getPowerStats()));
+        when(heroMapper.mapToDtoResponse(heroes.get(1))).thenReturn(new HeroDtoResponse(heroes.get(1).getId().toString(), heroes.get(1).getName(), heroes.get(1).getRace(), heroes.get(1).getPowerStats()));
+
+
+        Map<String, Object> result = heroService.compare("1", "2");
+        assertEquals("1", result.get("id1"));
+        assertEquals("2", result.get("id2"));
+        assertEquals(50, result.get("strengthDiff"));
+        assertEquals(50, result.get("agilityDiff"));
+        assertEquals(-50, result.get("dexterityDiff"));
+        assertEquals(-50, result.get("intelligenceDiff"));
+    }
+
+    @Test
+    public void shouldReturnSuccessWhenNegativeParams(){
+        List<Hero> heroes = createListHeroes();
+        heroes.getFirst().getPowerStats().setAgility(-100);
+        heroes.getFirst().getPowerStats().setDexterity(-100);
+        heroes.getFirst().getPowerStats().setIntelligence(-100);
+        heroes.getFirst().getPowerStats().setStrength(-100);
+        heroes.get(1).getPowerStats().setAgility(-50);
+        heroes.get(1).getPowerStats().setDexterity(-50);
+        heroes.get(1).getPowerStats().setIntelligence(-50);
+        heroes.get(1).getPowerStats().setStrength(-50);
+
+
+        when(heroRepository.findById("1")).thenReturn(Optional.ofNullable(heroes.get(0)));
+        when(heroRepository.findById("2")).thenReturn(Optional.ofNullable(heroes.get(1)));
+        when(heroMapper.mapToDtoResponse(heroes.get(0))).thenReturn(new HeroDtoResponse(heroes.get(0).getId().toString(), heroes.get(0).getName(), heroes.get(0).getRace(), heroes.get(0).getPowerStats()));
+        when(heroMapper.mapToDtoResponse(heroes.get(1))).thenReturn(new HeroDtoResponse(heroes.get(1).getId().toString(), heroes.get(1).getName(), heroes.get(1).getRace(), heroes.get(1).getPowerStats()));
+
+
+        Map<String, Object> result = heroService.compare("1", "2");
+        assertEquals("1", result.get("id1"));
+        assertEquals("2", result.get("id2"));
+        assertEquals(-50, result.get("strengthDiff"));
+        assertEquals(-50, result.get("agilityDiff"));
+        assertEquals(-50, result.get("dexterityDiff"));
+        assertEquals(-50, result.get("intelligenceDiff"));
+    }
+
+    @Test
+    public void shouldReturnObjectNotFoundWhenCompareHeroesDontMatch() {
+        when(heroRepository.findById("1")).thenReturn(Optional.empty());
+        when(heroRepository.findById("2")).thenReturn(Optional.empty());
+        assertThrows(ObjectNotFoundException.class, () -> heroService.compare("1", "2"));
+    }
+
+
+
+
+    private List<Hero> createListHeroes(){
         List<Hero> heroes = new ArrayList<>();
 
         PowerStats powerStats1 = new PowerStats(100, 100, 50, 50);
@@ -140,17 +184,20 @@ public class HeroServiceImplTest {
         return heroes;
     }
 
-    public Hero createHero() {
+    private Hero createHero() {
         PowerStats powerStats = new PowerStats(100, 100, 50, 50);
         Hero hero = new Hero("1", "Superman", Race.ALIEN, powerStats, true);
         return hero;
     }
 
-    public HeroDtoResponse createHeroDtoResponse() {
+    private HeroDtoResponse createHeroDtoResponse() {
         PowerStats powerStats = new PowerStats(100, 100, 50, 50);
 
         return new HeroDtoResponse("1", "Superman", Race.ALIEN, powerStats);
     }
+
+
+
 }
 
 

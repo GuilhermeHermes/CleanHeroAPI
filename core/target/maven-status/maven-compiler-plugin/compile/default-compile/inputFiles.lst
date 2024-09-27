@@ -5,6 +5,7 @@
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/utils/HeroMapper.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/features/hero/HeroRepository.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/features/hero/HeroService.java
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/utils/exceptions/GlobalExceptionHandler.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/features/hero/exception/ObjectNotFoundException.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/utils/exceptions/StandardError.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/main/java/br/com/gubee/interview/core/configuration/Instantiation.java

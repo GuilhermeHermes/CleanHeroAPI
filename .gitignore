@@ -18,3 +18,5 @@
 /.idea
 /core/src/test/resources/application-it.properties
 logs/application.log
+*.log
+core/logs/application.log

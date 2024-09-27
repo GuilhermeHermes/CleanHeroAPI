@@ -65,21 +65,6 @@ public class HeroControllerTest {
                 .andExpect(jsonPath("$.powerStats.intelligence").value(80));
     }
 
-//    @Test
-//    public void testFindById_ThrowsException() throws Exception {
-//        mockMvc.perform(get("/api/v1/heroes/1334asbd1234")
-//                        .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isNotFound())  // Verifica se o status é 200 OK
-//                .andExpect(jsonPath("$.id").value("1"))
-//                .andExpect(jsonPath("$.name").value("Hero One"))
-//                .andExpect(jsonPath("$.race").value("HUMAN"))
-//                .andExpect(jsonPath("$.powerStats.strength").value(50))
-//                .andExpect(jsonPath("$.powerStats.agility").value(60))
-//                .andExpect(jsonPath("$.powerStats.dexterity").value(70))
-//                .andExpect(jsonPath("$.powerStats.intelligence").value(80));
-//    }
-
-
 
     @Test
     public void testFindByName_Success() throws Exception {
