@@ -93,8 +93,19 @@ class HeroControllerTest {
         @Test
         void shouldPassCorrectParamsToService() {
             //arrange
-            var hero = HeroFactory.createDefaultHeroDtoResponse();
-            doReturn(hero).when(heroService).compare(heroIdCaptor.capture(), heroIdCaptor.capture());
+            List<Hero> heroes = HeroFactory.createListHeroes();
+            Map<String, Object> compareResponse = new HashMap<>();
+            compareResponse.put("hero1", heroes.get(0).getId());
+            compareResponse.put("hero2", heroes.get(1).getId());
+            Integer strengthDiff = heroes.get(0).getPowerStats().getStrength() - heroes.get(1).getPowerStats().getStrength();
+            Integer agilityDiff = heroes.get(0).getPowerStats().getAgility() - heroes.get(1).getPowerStats().getAgility();
+            Integer dexterityDiff = heroes.get(0).getPowerStats().getDexterity() - heroes.get(1).getPowerStats().getDexterity();
+            Integer intelligenceDiff = heroes.get(0).getPowerStats().getIntelligence() - heroes.get(1).getPowerStats().getIntelligence();
+            compareResponse.put("strengthDiff", strengthDiff);
+            compareResponse.put("agilityDiff", agilityDiff);
+            compareResponse.put("dexterityDiff", dexterityDiff);
+            compareResponse.put("intelligenceDiff", intelligenceDiff);
+            doReturn(compareResponse).when(heroService).compare(heroIdCaptor.capture(), heroIdCaptor.capture());
             //act
             var response = heroController.compare("1", "2");
             //assert

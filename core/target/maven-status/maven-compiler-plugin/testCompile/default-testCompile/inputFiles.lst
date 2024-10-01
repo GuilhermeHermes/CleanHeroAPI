@@ -1,6 +1,11 @@
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/exceptions/ResourceExceptionHandlerTest.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/utils/HeroServiceStub.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroServiceIT.java
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroMapperTest.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/utils/HeroFactory.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroControllerTest.java
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroRepositorieTest.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroControllerIT.java
 /home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroServiceImplTest.java
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroControllerTest1.java
+/home/guilhermehermes/Documentos/GitHub/teste-gubee-main/core/src/test/java/br/com/gubee/interview/core/features/hero/HeroRepositoryIT.java
