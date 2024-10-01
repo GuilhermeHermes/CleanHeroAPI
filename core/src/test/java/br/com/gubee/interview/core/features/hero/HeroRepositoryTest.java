@@ -32,7 +32,7 @@ class HeroRepositoryTest {
     static void containersProperties(DynamicPropertyRegistry registry) {
         mongoDBContainer.start();
         registry.add("spring.data.mongodb.host", mongoDBContainer::getHost);
-        registry.add("spring.data.mongodb.port", mongoDBContainer::getFirstMappedPort);
+        registry.add("spring.data.mongodb.port", () -> mongoDBContainer.getMappedPort(27017));;
     }
 
     @BeforeEach
