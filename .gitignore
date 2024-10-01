@@ -20,3 +20,5 @@
 logs/application.log
 *.log
 core/logs/application.log
+/core/target/
+/model/target/
