@@ -2,9 +2,12 @@ package br.com.gubee.interview.core.features.hero.utils;
 
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
+import br.com.gubee.interview.model.dtos.HeroDtoRequest;
+import br.com.gubee.interview.model.dtos.HeroDtoResponse;
 import br.com.gubee.interview.model.enums.Race;
 import org.bson.types.ObjectId;
 
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -36,9 +39,32 @@ public class HeroFactory {
         return hero;
     }
 
+    public static List<Hero> createListHeroes(){
+        Hero hero1 = createRandomHeroWithId();
+        Hero hero2 = createRandomHeroWithId();
+        Hero hero3 = createRandomHeroWithId();
+        return List.of(hero1, hero2, hero3);
+    }
+
+    public static List<HeroDtoRequest> createListHeroesDtoRequest(){
+        HeroDtoRequest hero1 = createDefaultHeroDtoRequest();
+        HeroDtoRequest hero2 = createDefaultHeroDtoRequest();
+        HeroDtoRequest hero3 = createDefaultHeroDtoRequest();
+        return List.of(hero1, hero2, hero3);
+    }
+
     public static Hero createDefaultHero() {
         PowerStats defaultStats = new PowerStats(50, 50, 50, 50); // Exemplo de stats
         return createHero("Default Hero", Race.HUMAN, defaultStats, true);
     }
-}
 
+    public static HeroDtoResponse createDefaultHeroDtoResponse() {
+        PowerStats defaultStats = new PowerStats(50, 50, 50, 50); // Exemplo de stats
+        return new HeroDtoResponse("1", "Default Hero", Race.HUMAN, defaultStats);
+    }
+
+    public static HeroDtoRequest createDefaultHeroDtoRequest() {
+        PowerStats defaultStats = new PowerStats(50, 50, 50, 50); // Exemplo de stats
+        return new HeroDtoRequest("Default Hero", Race.HUMAN, defaultStats, true);
+    }
+}

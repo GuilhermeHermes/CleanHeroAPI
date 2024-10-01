@@ -2,7 +2,6 @@ package br.com.gubee.interview.core.features.hero;
 
 
 import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
-import br.com.gubee.interview.core.utils.HeroMapper;
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.PowerStats;
 import br.com.gubee.interview.model.dtos.HeroDtoRequest;

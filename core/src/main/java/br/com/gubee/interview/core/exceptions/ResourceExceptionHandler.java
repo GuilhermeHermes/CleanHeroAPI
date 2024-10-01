@@ -1,4 +1,4 @@
-package br.com.gubee.interview.core.utils.exceptions;
+package br.com.gubee.interview.core.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

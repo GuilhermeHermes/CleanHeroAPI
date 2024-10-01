@@ -27,7 +27,7 @@ public class HeroController {
 
 
     @GetMapping
-    public ResponseEntity<List<HeroDtoResponse>> findAll() {
+    public ResponseEntity<List<HeroDtoResponse>> listHeroes() {
         List<HeroDtoResponse> heroes = heroService.findAll();
         return ResponseEntity.ok().body(heroes);
     }

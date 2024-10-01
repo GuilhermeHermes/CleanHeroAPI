@@ -1,4 +1,4 @@
-package br.com.gubee.interview.core.utils;
+package br.com.gubee.interview.core.features.hero;
 
 import br.com.gubee.interview.model.Hero;
 import br.com.gubee.interview.model.dtos.HeroDtoRequest;
@@ -17,6 +17,10 @@ public class HeroMapper {
         return mapper.map(hero, HeroDtoResponse.class);
     }
 
+    public static HeroDtoResponse mapToDtoResponse(HeroDtoRequest request) {
+        return mapper.map(request, HeroDtoResponse.class);
+    }
+
     public HeroDtoRequest mapToDtoRequest(Hero hero) {
         return mapper.map(hero, HeroDtoRequest.class);
     }
@@ -25,12 +29,14 @@ public class HeroMapper {
         return mapper.map(response, HeroDtoRequest.class);
     }
 
-    public static HeroDtoResponse mapToDtoResponse(HeroDtoRequest request) {
-        return mapper.map(request, HeroDtoResponse.class);
-    }
-
     public Hero mapToHero(HeroDtoRequest request) {
         Hero hero = mapper.map(request, Hero.class);
+
+        return hero;
+    }
+
+    public Hero mapToHero(HeroDtoResponse response) {
+        Hero hero = mapper.map(response, Hero.class);
 
         return hero;
     }
