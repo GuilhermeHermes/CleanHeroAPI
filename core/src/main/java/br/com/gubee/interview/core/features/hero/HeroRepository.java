@@ -22,5 +22,5 @@ public interface HeroRepository extends MongoRepository<Hero, String> {
 
     void deleteById(String id);
 
-    void deleteAllByIdIn(List<String> ids);
+    void deleteAllByNameIn(List<String> names);
 }

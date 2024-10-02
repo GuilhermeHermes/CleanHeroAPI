@@ -32,8 +32,6 @@ public class HeroController {
         return ResponseEntity.ok().body(heroes);
     }
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity<HeroDtoResponse> findById(@PathVariable String id) {
         HeroDtoResponse hero = heroService.findById(id);

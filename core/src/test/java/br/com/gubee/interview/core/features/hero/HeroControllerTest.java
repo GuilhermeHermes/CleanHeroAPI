@@ -141,6 +141,8 @@ class HeroControllerTest {
         void shouldReturnResponseBodyCorrectly() {
             //arrange
             List<Hero> heroes = HeroFactory.createListHeroes();
+            heroes.get(0).setId("1");
+            heroes.get(1).setId("2");
             Map<String, Object> compareResponse = new HashMap<>();
             compareResponse.put("hero1", heroes.get(0).getId());
             compareResponse.put("hero2", heroes.get(1).getId());

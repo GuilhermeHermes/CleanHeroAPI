@@ -67,4 +67,8 @@ public class HeroMapper {
         return hero;
     }
 
+    public String writeValueAsString(Object object) {
+        return mapper.toString();
+    }
+
 }

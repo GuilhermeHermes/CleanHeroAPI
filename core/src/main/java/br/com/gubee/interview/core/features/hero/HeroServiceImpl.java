@@ -33,12 +33,12 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public List<HeroDtoResponse> findAll() {
-        return heroRepository.findAll().stream().map(heroMapper::mapToDtoResponse).toList();
+        return heroMapper.mapToDtoResponseList(heroRepository.findAll());
     }
 
     @Override
     public List<HeroDtoResponse> findAll(List<String> ids) {
-        return heroRepository.findAllById(ids).stream().map(heroMapper::mapToDtoResponse).toList();
+        return heroMapper.mapToDtoResponseList(heroRepository.findAllByIdIn(ids));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class HeroServiceImpl implements HeroService {
     }
 
     @Override
-    public void delete(List<String> ids) {
-         heroRepository.deleteAllByIdIn(ids);
+    public void delete(List<String> names) {
+         heroRepository.deleteAllByNameIn(names);
     }
 
     @Override

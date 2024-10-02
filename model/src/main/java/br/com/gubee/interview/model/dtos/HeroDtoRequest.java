@@ -39,6 +39,8 @@ public class HeroDtoRequest {
         this.enabled = enabled;
     }
 
+
+
     public String getId(){
         return id;
     }

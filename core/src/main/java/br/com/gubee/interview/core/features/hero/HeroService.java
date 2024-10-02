@@ -25,7 +25,7 @@ public interface HeroService {
 
     void delete(String id);
 
-    void delete(List<String> ids);
+    void delete(List<String> names);
 
     void deleteAll();
 

@@ -39,11 +39,34 @@ public class HeroServiceImplTest {
         List<Hero> heroes = createListHeroes();
 
         when(heroRepository.findAll()).thenReturn(heroes);
-        when(heroMapper.mapToDtoResponseList(heroes)).thenReturn(Arrays.asList(new HeroDtoResponse(), new HeroDtoResponse()));
+        when(heroMapper.mapToDtoResponseList(heroes)).thenReturn(Arrays.asList(
+                new HeroDtoResponse(heroes.get(0).getId(), heroes.get(0).getName(), heroes.get(0).getRace(), heroes.get(0).getPowerStats()),
+                new HeroDtoResponse(heroes.get(1).getId(), heroes.get(1).getName(), heroes.get(1).getRace(), heroes.get(1).getPowerStats())
+        ));
 
         List<HeroDtoResponse> heroesResponse = heroService.findAll();
 
         assertEquals(2, heroesResponse.size());
+        assertEquals(heroes.get(0).getId(), heroesResponse.get(0).getId());
+        assertEquals(heroes.get(1).getId(), heroesResponse.get(1).getId());
+    }
+
+    @Test
+    public void testFindAllByIds(){
+        List<Hero> heroes = createListHeroes();
+        List<String> ids = Arrays.asList("1", "2");
+
+        when(heroRepository.findAllByIdIn(ids)).thenReturn(heroes);
+        when(heroMapper.mapToDtoResponseList(heroes)).thenReturn(Arrays.asList(
+                new HeroDtoResponse(heroes.get(0).getId(), heroes.get(0).getName(), heroes.get(0).getRace(), heroes.get(0).getPowerStats()),
+                new HeroDtoResponse(heroes.get(1).getId(), heroes.get(1).getName(), heroes.get(1).getRace(), heroes.get(1).getPowerStats())));
+
+        List<HeroDtoResponse> heroesResponse = heroService.findAll(ids);
+
+        assertEquals(2, heroesResponse.size());
+        assertEquals(heroes.get(0).getId(), heroesResponse.get(0).getId());
+        assertEquals(heroes.get(1).getId(), heroesResponse.get(1).getId());
+
     }
 
 
@@ -172,15 +195,13 @@ public class HeroServiceImplTest {
 
 
     private List<Hero> createListHeroes(){
-        List<Hero> heroes = new ArrayList<>();
 
         PowerStats powerStats1 = new PowerStats(100, 100, 50, 50);
         PowerStats powerStats2 = new PowerStats(50, 50, 100, 100);
 
         Hero hero1 = new Hero("1", "Superman", Race.ALIEN, powerStats1, true);
         Hero hero2 = new Hero( "2", "Batman", Race.HUMAN, powerStats2, true);
-        heroes.addAll(Arrays.asList(hero1, hero2));
-        return heroes;
+        return new ArrayList<>(Arrays.asList(hero1, hero2));
     }
 
     private Hero createHero() {

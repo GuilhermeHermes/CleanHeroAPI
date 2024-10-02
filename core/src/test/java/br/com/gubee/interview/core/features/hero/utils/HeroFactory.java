@@ -13,6 +13,10 @@ import java.util.UUID;
 
 public class HeroFactory {
 
+    private HeroFactory() {
+        throw new UnsupportedOperationException("Utility class");
+    }
+
     public static Hero createHero(String name, Race race, PowerStats powerStats, boolean enabled) {
         Hero hero = new Hero();
         hero.setName(name);
@@ -40,16 +44,16 @@ public class HeroFactory {
     }
 
     public static List<Hero> createListHeroes(){
-        Hero hero1 = createRandomHeroWithId();
-        Hero hero2 = createRandomHeroWithId();
-        Hero hero3 = createRandomHeroWithId();
+        Hero hero1 = createHero("Iron Man", Race.HUMAN, new PowerStats(85, 90, 95, 80), true);
+        Hero hero2 = createHero("Spider-Man", Race.HUMAN, new PowerStats(75, 80, 85, 70), true);
+        Hero hero3 = createHero("Thor", Race.DIVINE, new PowerStats(95, 100, 90, 85), true);
         return List.of(hero1, hero2, hero3);
     }
 
     public static List<HeroDtoRequest> createListHeroesDtoRequest(){
-        HeroDtoRequest hero1 = createDefaultHeroDtoRequest();
-        HeroDtoRequest hero2 = createDefaultHeroDtoRequest();
-        HeroDtoRequest hero3 = createDefaultHeroDtoRequest();
+        HeroDtoRequest hero1 = new HeroDtoRequest("Iron Man", Race.HUMAN, new PowerStats(85, 90, 95, 80), true);
+        HeroDtoRequest hero2 = new HeroDtoRequest("Spider-Man", Race.HUMAN, new PowerStats(75, 80, 85, 70), true);
+        HeroDtoRequest hero3 = new HeroDtoRequest("Thor", Race.DIVINE, new PowerStats(95, 100, 90, 85), true);
         return List.of(hero1, hero2, hero3);
     }
 
