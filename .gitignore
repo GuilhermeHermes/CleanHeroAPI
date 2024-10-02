@@ -22,3 +22,7 @@ logs/application.log
 core/logs/application.log
 /core/target/
 /model/target/
+core/logs/application.log
+core/logs/application.log
+core/logs/stdout.json
+core/target/surefire-reports/br.com.gubee.interview.core.features.hero.HeroControllerTest$compare.txt

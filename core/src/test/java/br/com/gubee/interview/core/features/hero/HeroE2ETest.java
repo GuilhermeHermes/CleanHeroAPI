@@ -10,10 +10,12 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
@@ -23,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
+@ActiveProfiles("it")
 public class HeroE2ETest {
 
     @Autowired
@@ -31,12 +34,16 @@ public class HeroE2ETest {
     @Autowired
     private HeroRepository heroRepository;
 
-    private static final String BASE_URL = "/api/v1/heroes";
+    private String BASE_URL;
     private static String savedHeroId;
+
+    @LocalServerPort
+    private int port;
 
     @BeforeAll
     void setup() {
         heroRepository.deleteAll();
+        BASE_URL = "http://localhost:" + port + "/api/v1/heroes";
     }
 
     @Test
