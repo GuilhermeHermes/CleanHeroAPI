@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
+import br.com.gubee.interview.core.hero.exception.ObjectNotFoundException;
 
 import java.time.Instant;
 

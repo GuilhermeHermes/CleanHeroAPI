@@ -1,15 +1,14 @@
 package br.com.gubee.interview.core.features.hero.utils;
 
-import br.com.gubee.interview.model.Hero;
-import br.com.gubee.interview.model.PowerStats;
-import br.com.gubee.interview.model.dtos.HeroDtoRequest;
-import br.com.gubee.interview.model.dtos.HeroDtoResponse;
-import br.com.gubee.interview.model.enums.Race;
+import br.com.gubee.interview.domain.Hero;
+import br.com.gubee.interview.domain.vo.PowerStats;
+import br.com.gubee.interview.domain.dtos.HeroDtoRequest;
+import br.com.gubee.interview.domain.dtos.HeroDtoResponse;
+import br.com.gubee.interview.domain.enums.Race;
 import org.bson.types.ObjectId;
 
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
 
 public class HeroFactory {
 

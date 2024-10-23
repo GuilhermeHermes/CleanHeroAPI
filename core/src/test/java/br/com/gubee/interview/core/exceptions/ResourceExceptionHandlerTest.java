@@ -1,11 +1,9 @@
 package br.com.gubee.interview.core.exceptions;
 
-import br.com.gubee.interview.core.features.hero.exception.ObjectNotFoundException;
+import br.com.gubee.interview.core.hero.exception.ObjectNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
-
-import java.net.URI;
 
 import static org.junit.jupiter.api.Assertions.*;
 
