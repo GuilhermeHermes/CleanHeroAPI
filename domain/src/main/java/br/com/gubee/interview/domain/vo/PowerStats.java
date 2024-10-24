@@ -3,15 +3,13 @@ package br.com.gubee.interview.domain.vo;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
+import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
 
 
 
 public class PowerStats implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Min(value = 0, message = "message.powerstats.strength.min.0")
@@ -34,11 +32,7 @@ public class PowerStats implements Serializable {
     @NotNull(message = "message.powerstats.intelligence.mandatory")
     private Integer intelligence;
 
-    @CreatedDate
-    private Instant createdAt;
 
-    @LastModifiedDate
-    private Instant updatedAt;
 
 
     public PowerStats() {
@@ -87,12 +81,6 @@ public class PowerStats implements Serializable {
         this.intelligence = intelligence;
     }
 
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
 
 
 
@@ -103,8 +91,6 @@ public class PowerStats implements Serializable {
                 ", agility=" + agility +
                 ", dexterity=" + dexterity +
                 ", intelligence=" + intelligence +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
                 '}';
     }
 
