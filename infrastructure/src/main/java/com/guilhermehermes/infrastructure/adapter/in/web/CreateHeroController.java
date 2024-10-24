@@ -3,7 +3,6 @@ package com.guilhermehermes.infrastructure.adapter.in.web;
 import br.com.gubee.interview.application.hero.useCases.CreateHeroUseCase;
 import br.com.gubee.interview.application.hero.service.create_hero.CreateHeroInput;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +20,6 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @Validated
 public class CreateHeroController {
 
-    @Autowired
     private final CreateHeroUseCase createHeroUseCase;
 
     public CreateHeroController(CreateHeroUseCase createHeroUseCase) {

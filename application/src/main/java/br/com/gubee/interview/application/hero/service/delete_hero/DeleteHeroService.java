@@ -2,9 +2,7 @@ package br.com.gubee.interview.application.hero.service.delete_hero;
 
 import br.com.gubee.interview.application.hero.useCases.DeleteHeroUseCase;
 import br.com.gubee.interview.domain.repositories.HeroPersistence;
-import org.springframework.stereotype.Service;
 
-@Service
 public class DeleteHeroService implements DeleteHeroUseCase {
 
     private HeroPersistence heroRepository;

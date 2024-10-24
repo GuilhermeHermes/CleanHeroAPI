@@ -35,6 +35,7 @@ public class HeroEntityPersistence {
         this.id = hero.getId() != null ? new ObjectId(hero.getId()) : null;
         this.name = hero.getName();
         this.powerStats = hero.getPowerStats();
+        this.race = hero.getRace();
         this.enabled = hero.isEnabled();
     }
 

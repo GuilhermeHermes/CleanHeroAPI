@@ -10,8 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
- class CreateHeroService implements CreateHeroUseCase {
+ public class CreateHeroService implements CreateHeroUseCase {
 
     private final HeroPersistence heroRepository;
 

@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-class GetHeroesService implements GetHeroesUseCase {
+public class GetHeroesService implements GetHeroesUseCase {
 
     private final HeroPersistence heroRepository;
 
