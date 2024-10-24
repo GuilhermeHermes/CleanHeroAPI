@@ -1,6 +1,4 @@
-br/com/gubee/interview/model/dtos/HeroDtoRequest.class
-br/com/gubee/interview/model/PowerStats.class
-br/com/gubee/interview/model/enums/Race.class
-br/com/gubee/interview/model/dtos/PowerStatsDTO.class
-br/com/gubee/interview/model/dtos/HeroDtoResponse.class
-br/com/gubee/interview/model/Hero.class
+br/com/gubee/interview/domain/vo/PowerStats.class
+br/com/gubee/interview/domain/repositories/HeroPersistence.class
+br/com/gubee/interview/domain/model/Hero.class
+br/com/gubee/interview/domain/enums/Race.class
