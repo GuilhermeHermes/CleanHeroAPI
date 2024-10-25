@@ -5,7 +5,6 @@ import br.com.gubee.interview.application.hero.exception.ObjectNotFoundException
 import br.com.gubee.interview.domain.adapters.LoadHeroPort;
 import br.com.gubee.interview.domain.adapters.SaveHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.adapters.HeroPersistence;
 
 import java.util.Optional;
 

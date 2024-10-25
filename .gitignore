@@ -26,3 +26,10 @@ core/logs/application.log
 core/logs/application.log
 core/logs/stdout.json
 core/target/surefire-reports/br.com.gubee.interview.core.features.hero.HeroControllerTest$compare.txt
+*.txt
+application/target/surefire-reports/br.com.gubee.interview.application.exceptions.ResourceExceptionHandlerTest.txt
+application/target/surefire-reports/TEST-br.com.gubee.interview.application.exceptions.ResourceExceptionHandlerTest.xml
+domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+domain/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+domain/target/teste-gubee-model-1.0.0-SNAPSHOT.jar
+infrastructure/logs/application-2024-10-24-1.log.gz

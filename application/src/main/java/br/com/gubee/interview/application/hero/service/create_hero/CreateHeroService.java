@@ -3,7 +3,6 @@ package br.com.gubee.interview.application.hero.service.create_hero;
 import br.com.gubee.interview.application.hero.useCases.CreateHeroUseCase;
 import br.com.gubee.interview.domain.adapters.SaveHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.adapters.HeroPersistence;
 
 import java.time.Instant;
 import java.util.Date;

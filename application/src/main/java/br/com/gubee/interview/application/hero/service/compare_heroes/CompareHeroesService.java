@@ -4,7 +4,6 @@ import br.com.gubee.interview.application.hero.useCases.CompareHeroesUseCase;
 import br.com.gubee.interview.application.hero.exception.ObjectNotFoundException;
 import br.com.gubee.interview.domain.adapters.LoadHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.adapters.HeroPersistence;
 import br.com.gubee.interview.domain.vo.PowerStats;
 
 import java.util.HashMap;
