@@ -1,13 +1,13 @@
 package br.com.gubee.interview.application.hero.service.delete_hero;
 
 import br.com.gubee.interview.application.hero.useCases.DeleteHeroUseCase;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
+import br.com.gubee.interview.domain.adapters.DeleteHeroPort;
 
 public class DeleteHeroService implements DeleteHeroUseCase {
 
-    private HeroPersistence heroRepository;
+    private DeleteHeroPort heroRepository;
 
-    public DeleteHeroService(HeroPersistence heroRepository) {
+    public DeleteHeroService(DeleteHeroPort heroRepository) {
         this.heroRepository = heroRepository;
     }
 

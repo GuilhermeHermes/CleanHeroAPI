@@ -1,7 +1,9 @@
 package com.guilhermehermes.infrastructure.adapter.out.persistence;
 
+import br.com.gubee.interview.domain.adapters.DeleteHeroPort;
+import br.com.gubee.interview.domain.adapters.LoadHeroPort;
+import br.com.gubee.interview.domain.adapters.SaveHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
- class HeroPersistenceAdapter implements HeroPersistence {
+public class HeroPersistenceAdapter implements LoadHeroPort, SaveHeroPort, DeleteHeroPort {
 
     private final HeroMongoRepository heroRepository;
 

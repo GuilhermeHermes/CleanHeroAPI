@@ -231,7 +231,7 @@ Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while wai
 [32m[INFO ][m [35m[2024-10-24T12:43:33,178] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:43:33,236] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:43:33,236] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 897 ms 
-[33m[WARN ][m [35m[2024-10-24T12:43:33,282] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:43:33,282] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:43:33,348] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:43:33,361] [main] [ConditionEvaluationReportLogger][m 
 
@@ -244,12 +244,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:43:41,313] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.0.Final 
 [32m[INFO ][m [35m[2024-10-24T12:43:41,350] [main] [Application][m Starting Application using Java 21.0.4 with PID 149133 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 
@@ -263,7 +263,7 @@ Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.Her
 [32m[INFO ][m [35m[2024-10-24T12:43:42,135] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:43:42,198] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:43:42,198] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 811 ms 
-[33m[WARN ][m [35m[2024-10-24T12:43:42,237] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:43:42,237] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:43:42,289] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:43:42,299] [main] [ConditionEvaluationReportLogger][m 
 
@@ -276,12 +276,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:43:46,478] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.0.Final 
 [32m[INFO ][m [35m[2024-10-24T12:43:46,507] [main] [Application][m Starting Application using Java 21.0.4 with PID 149263 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 
@@ -295,7 +295,7 @@ Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.Her
 [32m[INFO ][m [35m[2024-10-24T12:43:47,359] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:43:47,426] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:43:47,426] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 875 ms 
-[33m[WARN ][m [35m[2024-10-24T12:43:47,468] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:43:47,468] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:43:47,522] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:43:47,542] [main] [ConditionEvaluationReportLogger][m 
 
@@ -308,12 +308,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:45:33,485] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.0.Final 
 [32m[INFO ][m [35m[2024-10-24T12:45:33,514] [main] [Application][m Starting Application using Java 21.0.4 with PID 149934 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 
@@ -327,7 +327,7 @@ Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.Her
 [32m[INFO ][m [35m[2024-10-24T12:45:34,339] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:45:34,403] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:45:34,403] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 840 ms 
-[33m[WARN ][m [35m[2024-10-24T12:45:34,443] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:45:34,443] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:45:34,496] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:45:34,517] [main] [ConditionEvaluationReportLogger][m 
 
@@ -340,12 +340,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:45:37,357] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.0.Final 
 [32m[INFO ][m [35m[2024-10-24T12:45:37,387] [main] [Application][m Starting Application using Java 21.0.4 with PID 150073 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 
@@ -359,7 +359,7 @@ Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.Her
 [32m[INFO ][m [35m[2024-10-24T12:45:38,263] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:45:38,329] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:45:38,329] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 901 ms 
-[33m[WARN ][m [35m[2024-10-24T12:45:38,369] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:45:38,369] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:45:38,422] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:45:38,432] [main] [ConditionEvaluationReportLogger][m 
 
@@ -372,12 +372,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:47:02,040] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.0.Final 
 [32m[INFO ][m [35m[2024-10-24T12:47:02,075] [main] [Application][m Starting Application using Java 21.0.4 with PID 151152 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 
@@ -391,7 +391,7 @@ Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.Her
 [32m[INFO ][m [35m[2024-10-24T12:47:02,940] [main] [StandardEngine][m Starting Servlet engine: [Apache Tomcat/10.1.8] 
 [32m[INFO ][m [35m[2024-10-24T12:47:03,006] [main] [[/]][m Initializing Spring embedded WebApplicationContext 
 [32m[INFO ][m [35m[2024-10-24T12:47:03,007] [main] [ServletWebServerApplicationContext][m Root WebApplicationContext: initialization completed in 886 ms 
-[33m[WARN ][m [35m[2024-10-24T12:47:03,047] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[33m[WARN ][m [35m[2024-10-24T12:47:03,047] [main] [AnnotationConfigServletWebServerApplicationContext][m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getHeroesService' defined in file [/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/application/target/classes/br/com/gubee/interview/application/hero/service/GetHeroesService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 [32m[INFO ][m [35m[2024-10-24T12:47:03,100] [main] [StandardService][m Stopping service [Tomcat] 
 [32m[INFO ][m [35m[2024-10-24T12:47:03,111] [main] [ConditionEvaluationReportLogger][m 
 
@@ -404,12 +404,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' that could not be found.
+Parameter 0 of constructor in br.com.gubee.interview.application.hero.service.GetHeroesService required a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'br.com.gubee.interview.domain.repositories.HeroPersistence' in your configuration.
+Consider defining a bean of type 'br.com.gubee.interview.domain.adapters.HeroPersistence' in your configuration.
  
 [32m[INFO ][m [35m[2024-10-24T12:53:23,417] [background-preinit] [Version][m HV000001: Hibernate Validator 8.0.1.Final 
 [32m[INFO ][m [35m[2024-10-24T12:53:23,455] [main] [InfrastructureApplication][m Starting InfrastructureApplication using Java 21.0.4 with PID 153236 (/home/guilhermehermes/Documentos/GitHub/CleanHeroAPI/infrastructure/target/classes started by guilhermehermes in /home/guilhermehermes/Documentos/GitHub/CleanHeroAPI) 

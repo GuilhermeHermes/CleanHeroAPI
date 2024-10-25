@@ -2,10 +2,10 @@ package br.com.gubee.interview.application.hero.service.compare_heroes;
 
 import br.com.gubee.interview.application.hero.useCases.CompareHeroesUseCase;
 import br.com.gubee.interview.application.hero.exception.ObjectNotFoundException;
+import br.com.gubee.interview.domain.adapters.LoadHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
+import br.com.gubee.interview.domain.adapters.HeroPersistence;
 import br.com.gubee.interview.domain.vo.PowerStats;
-import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,9 +13,9 @@ import java.util.Map;
 public class CompareHeroesService implements CompareHeroesUseCase {
 
 
-    private final HeroPersistence heroRepository;
+    private final LoadHeroPort heroRepository;
 
-    public CompareHeroesService(HeroPersistence heroRepository) {
+    public CompareHeroesService(LoadHeroPort heroRepository) {
         this.heroRepository = heroRepository;
     }
 

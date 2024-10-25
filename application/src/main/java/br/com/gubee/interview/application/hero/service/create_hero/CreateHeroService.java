@@ -1,9 +1,9 @@
 package br.com.gubee.interview.application.hero.service.create_hero;
 
 import br.com.gubee.interview.application.hero.useCases.CreateHeroUseCase;
+import br.com.gubee.interview.domain.adapters.SaveHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
-import org.springframework.stereotype.Service;
+import br.com.gubee.interview.domain.adapters.HeroPersistence;
 
 import java.time.Instant;
 import java.util.Date;
@@ -12,11 +12,10 @@ import java.util.Map;
 
  public class CreateHeroService implements CreateHeroUseCase {
 
-    private final HeroPersistence heroRepository;
+    private final SaveHeroPort heroRepository;
 
-    public CreateHeroService(HeroPersistence heroRepository) {
+    public CreateHeroService(SaveHeroPort heroRepository) {
         this.heroRepository = heroRepository;
-        heroRepository.deleteAll();
     }
 
     public  Map<String, Object> execute(CreateHeroInput input) {

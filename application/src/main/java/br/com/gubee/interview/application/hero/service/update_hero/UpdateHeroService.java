@@ -2,24 +2,27 @@ package br.com.gubee.interview.application.hero.service.update_hero;
 
 import br.com.gubee.interview.application.hero.useCases.UpdateHeroUseCase;
 import br.com.gubee.interview.application.hero.exception.ObjectNotFoundException;
+import br.com.gubee.interview.domain.adapters.LoadHeroPort;
+import br.com.gubee.interview.domain.adapters.SaveHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
-import org.springframework.stereotype.Service;
+import br.com.gubee.interview.domain.adapters.HeroPersistence;
 
 import java.util.Optional;
 
 public class UpdateHeroService implements UpdateHeroUseCase {
 
-    private final HeroPersistence heroRepository;
+    private final SaveHeroPort heroRepository;
+    private final LoadHeroPort loadHeroPort;
 
-    public UpdateHeroService(HeroPersistence heroRepository) {
+    public UpdateHeroService(SaveHeroPort heroRepository, LoadHeroPort loadHeroPort) {
         this.heroRepository = heroRepository;
+        this.loadHeroPort = loadHeroPort;
     }
 
 
 
     public Hero execute(UpdateHeroInput input) {
-        return heroRepository.findById(input.getId())
+        return loadHeroPort.findById(input.getId())
                 .map(hero -> {
                     Optional.ofNullable(input.getName()).ifPresent(hero::setName);
                     Optional.ofNullable(input.getRace()).ifPresent(hero::setRace);

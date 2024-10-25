@@ -1,17 +1,16 @@
 package br.com.gubee.interview.application.hero.service;
 
 import br.com.gubee.interview.application.hero.useCases.GetHeroesUseCase;
+import br.com.gubee.interview.domain.adapters.LoadHeroPort;
 import br.com.gubee.interview.domain.model.Hero;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 public class GetHeroesService implements GetHeroesUseCase {
 
-    private final HeroPersistence heroRepository;
+    private final LoadHeroPort heroRepository;
 
-    public GetHeroesService(HeroPersistence heroRepository) {
+    public GetHeroesService(LoadHeroPort heroRepository) {
         this.heroRepository = heroRepository;
     }
 

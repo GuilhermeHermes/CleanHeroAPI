@@ -6,16 +6,16 @@ import br.com.gubee.interview.application.hero.service.create_hero.CreateHeroSer
 import br.com.gubee.interview.application.hero.service.delete_hero.DeleteHeroService;
 import br.com.gubee.interview.application.hero.service.update_hero.UpdateHeroService;
 import br.com.gubee.interview.application.hero.useCases.*;
-import br.com.gubee.interview.domain.repositories.HeroPersistence;
+import com.guilhermehermes.infrastructure.adapter.out.persistence.HeroPersistenceAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ServiceConfiguration {
 
-    private final HeroPersistence heroRepository;
+    private final HeroPersistenceAdapter heroRepository;
 
-    public ServiceConfiguration(HeroPersistence heroRepository) {
+    public ServiceConfiguration(HeroPersistenceAdapter heroRepository) {
         this.heroRepository = heroRepository;
     }
 
@@ -36,7 +36,7 @@ public class ServiceConfiguration {
 
     @Bean
     UpdateHeroUseCase updateHeroUseCase(){
-        return new UpdateHeroService(heroRepository);
+        return new UpdateHeroService(heroRepository, heroRepository);
     }
 
     @Bean
